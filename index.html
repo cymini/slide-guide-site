@@ -23,6 +23,7 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 16px;
+      margin-bottom: 20px;
     }
     .btn {
       text-decoration: none;
@@ -35,6 +36,7 @@
       text-align: center;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       color: #1d3557;
+      cursor: pointer;
     }
     .btn:hover {
       transform: translateY(-2px);
@@ -53,18 +55,37 @@
     .btn6:hover { background: #bde3f7; }
     .btn7 { background: #fde2ff; }
     .btn7:hover { background: #f3c3f7; }
+
+    iframe {
+      width: 100%;
+      height: 90vh;
+      border: none;
+      display: none;
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
   <h1>📘 디지털 기반 수업 혁신 직무연수 자료 안내</h1>
   <div class="container">
-    <a class="btn btn1" href="slide1.pdf" target="_blank">1차시: 마음이 답하다</a>
-    <a class="btn btn2" href="slide2.pdf" target="_blank">2차시: 데이터, AI, 창작을 잇다</a>
-    <a class="btn btn3" href="slide3.pdf" target="_blank">3차시: 살아있는 수업</a>
-    <a class="btn btn4" href="slide4.pdf" target="_blank">4차시: 플랫폼을 품은 수업</a>
-    <a class="btn btn5" href="slide5.pdf" target="_blank">5차시: 나만의 에듀테크</a>
-    <a class="btn btn6" href="slide6.pdf" target="_blank">6차시: 평가 혁신</a>
-    <a class="btn btn7" href="slide7.html">참고자료 보기</a>
+    <div class="btn btn1" onclick="openPDF('slide1.pdf')">1차시: 마음이 답하다</div>
+    <div class="btn btn2" onclick="openPDF('slide2.pdf')">2차시: 데이터, AI, 창작을 잇다</div>
+    <div class="btn btn3" onclick="openPDF('slide3.pdf')">3차시: 살아있는 수업</div>
+    <div class="btn btn4" onclick="openPDF('slide4.pdf')">4차시: 플랫폼을 품은 수업</div>
+    <div class="btn btn5" onclick="openPDF('slide5.pdf')">5차시: 나만의 에듀테크</div>
+    <div class="btn btn6" onclick="openPDF('slide6.pdf')">6차시: 평가 혁신</div>
+    <div class="btn btn7" onclick="openPDF('slide7.pdf')">참고자료 보기</div>
   </div>
+
+  <iframe id="pdfViewer"></iframe>
+
+  <script>
+    function openPDF(file) {
+      const viewer = document.getElementById("pdfViewer");
+      viewer.src = file;
+      viewer.style.display = "block";
+      window.scrollTo({ top: viewer.offsetTop - 20, behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
