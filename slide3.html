@@ -1,19 +1,22 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>3차시 슬라이드</title>
   <style>
-    body { font-family: sans-serif; text-align: center; padding: 20px; }
-    iframe { width: 100%; height: 90vh; border: none; }
-    .btn { margin-top: 10px; padding: 10px 20px; background: #666; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    body { margin: 0; font-family: sans-serif; }
+    iframe { width: 100%; height: 100vh; border: none; }
+    .back-button {
+      position: fixed; top: 20px; left: 20px;
+      background: #3aa; color: #fff; padding: 10px 20px;
+      border-radius: 8px; text-decoration: none;
+      font-weight: bold; z-index: 999;
+    }
   </style>
 </head>
 <body>
-  <h2>3차시 슬라이드 보기</h2>
-  <iframe src="3차시_AI·에듀테크로 설계하는 살아있는 수업.pdf.pdf"></iframe>
-  <br/>
-  <button class="btn" onclick="location.href='index.html'">⬅ 돌아가기</button>
+  <a class="back-button" href="index.html">← 돌아가기</a>
+  <iframe src="slide3.pdf"></iframe>
 </body>
 </html>
